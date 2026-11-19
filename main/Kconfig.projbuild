@@ -1,0 +1,23 @@
+menu "ESP32 BT Mic"
+    config MIC_GAIN_SHIFT
+        int "Mic gain shift (lower = louder)"
+        range 8 20
+        default 14
+    config SPK_DEFAULT_VOLUME
+        int "Speaker start volume (0-127, PC can change it via AVRCP)"
+        range 0 127
+        default 80
+config COD_PERIPHERAL
+    bool "Advertise Class of Device as Peripheral/Keyboard (instead of Audio headset)"
+    default n
+
+    config ALTTAB_REPEAT_DELAY_MS
+        int "Alt+Tab button: hold time before Tab starts repeating (ms)"
+        range 100 3000
+        default 600
+    config ALTTAB_REPEAT_INTERVAL_MS
+        int "Alt+Tab button: Tab repeat interval while held (ms)"
+        range 100 3000
+        default 500
+    config ALTTAB_REPEAT_DELAY_MS
+endmenu
